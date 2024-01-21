@@ -1,0 +1,10 @@
+[submodule "lolcat/themes/hugo.386"]
+	path = lolcat/themes/hugo.386
+	url = https://gitlab.com/jmfergeau/hugo.386
+[submodule "lolcat/public"]
+	path = lolcat/public
+	url = https://github.com/TheInvisibleFoe/theinvisiblefoe.github.io.git
+	branch = main
+[submodule "lolcat/themes/hello-4s3ti"]
+	path = lolcat/themes/hello-4s3ti
+	url = https://github.com/4s3ti/hugo-theme-hello-4s3ti.git
