@@ -1,9 +1,14 @@
-baseURL = 'https://theinvisiblefoe.github.org/'
+baseURL = 'https://theinvisiblefoe.github.io/'
 languageCode = 'en-us'
 title = 'lolcat'
 
-theme        = "hello-4s3ti"
+theme        = "hello-friend-ng"
+# theme = "FixIt"
 paginate     = 10
+# [module]
+# [[module.imports]]
+#     path = 'github.com/hugomods/katex'
+
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -12,34 +17,50 @@ paginate     = 10
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "A simple and beautiful blog"
+  homeSubtitle = "Greatness awaits you padawan"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
   # Enable sharing buttons, if you like
   enableSharingButtons = true
+  
+  # Show a global language switcher in the navigation bar
+  enableGlobalLanguageMenu = true
 
   # Metadata mostly used in document's head
   description = "My new homepage or blog"
   keywords = "homepage, blog"
   images = [""]
+    [[params.social]]
+        name = "lastfm"
+        icon = "Last.fm"
+        url = "https://www.last.fm/user/Sab2004"
+        weight =40
+    [[params.social]]
+        name = "github"
+        icon = "github"
+        url = "https://github.com/TheInvisibleFoe"
+        weight = 40 
 
 [taxonomies]
     category = "blog"
     tag      = "tags"
     series   = "series"
 
+
 [languages]
   [languages.en]
-    title = "Hello Friend NG"
-    subtitle = "A simple theme for Hugo"
+    title = "Welcome to the Octopus' Garden"
     keywords = ""
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
+  [languages.en.params]
+    subtitle  = "Heya people, I am Sabarno Saha. Just here testing out my website"
+
     [languages.en.params.logo]
-      logoText = "hello friend ng"
+      logoText = "Octopus' Garden"
       logoHomeLink = "/"
     # or
     #
@@ -51,3 +72,9 @@ paginate     = 10
     identifier = "blog"
     name       = "Blog"
     url        = "/posts"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About me"
+    url = "/about"
+    weight = 2

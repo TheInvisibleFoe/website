@@ -8,3 +8,9 @@
 [submodule "lolcat/themes/hello-4s3ti"]
 	path = lolcat/themes/hello-4s3ti
 	url = https://github.com/4s3ti/hugo-theme-hello-4s3ti.git
+[submodule "lolcat/themes/hello-friend-ng"]
+	path = lolcat/themes/hello-friend-ng
+	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
+[submodule "lolcat/themes/FixIt"]
+	path = lolcat/themes/FixIt
+	url = https://github.com/hugo-fixit/FixIt.git

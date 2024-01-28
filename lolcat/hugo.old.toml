@@ -1,0 +1,75 @@
+baseURL = 'https://theinvisiblefoe.github.io/'
+languageCode = 'en-us'
+title = 'lolcat'
+
+theme        = "hello-friend-ng"
+# theme = "FixIt"
+paginate     = 10
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # Subtitle for home
+  homeSubtitle = "Heya Poep"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Enable sharing buttons, if you like
+  enableSharingButtons = true
+  
+  # Show a global language switcher in the navigation bar
+  enableGlobalLanguageMenu = true
+
+  # Metadata mostly used in document's head
+  description = "My new homepage or blog"
+  keywords = "homepage, blog"
+  images = [""]
+    [[params.social]]
+      name = "Last.fm"
+      url = "https://www.last.fm/user/Sab2004"
+      weight =4
+    [[params.social]]
+        name = "github"
+        icon = "github"
+        url = "https://github.com/TheInvisibleFoe"
+        weight = 40 
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+
+[languages]
+  [languages.en]
+    title = "Welcome to the Octopus' Garden"
+    keywords = ""
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "Read other posts"
+
+  [languages.en.params]
+    subtitle  = "Heya people, I am Sabarno Saha. Just here testing out my website"
+
+    [languages.en.params.logo]
+      logoText = "Octopus' Garden"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About me"
+    url = "/about"
+    weight = 2

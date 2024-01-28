@@ -1,6 +1,6 @@
 +++
 title = 'Test'
-date = 2024-01-21T16:56:02+05:30
+date = 2024-01-01
 +++
 Checking shit
 ```python
