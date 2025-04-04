@@ -2,79 +2,93 @@ baseURL = 'https://theinvisiblefoe.github.io/'
 languageCode = 'en-us'
 title = 'lolcat'
 
-theme        = "hello-friend-ng"
+theme = "hello-friend-ng"
 # theme = "FixIt"
-paginate     = 10
+paginate = 10
 # [module]
 # [[module.imports]]
 #     path = 'github.com/hugomods/katex'
 
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04"
+dateform = "Jan 2, 2006"
+dateformShort = "Jan 2"
+dateformNum = "2006-01-02"
+dateformNumTime = "2006-01-02 15:04"
+math = true
 
-  # Subtitle for home
-  homeSubtitle = "They are taking the Hobbits to Isengard"
+# Subtitle for home
+homeSubtitle = "They are taking the Hobbits to Isengard"
 
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  disableReadOtherPosts = false
+# Set disableReadOtherPosts to true in order to hide the links to other posts.
+disableReadOtherPosts = false
 
-  # Enable sharing buttons, if you like
-  enableSharingButtons = true
-  
-  # Show a global language switcher in the navigation bar
-  enableGlobalLanguageMenu = true
+# Enable sharing buttons, if you like
+enableSharingButtons = true
 
-  # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
-  images = [""]
-    [[params.social]]
-        name = "lastfm"
-        icon = "Last.fm"
-        url = "https://www.last.fm/user/Sab2004"
-        weight =40
-    [[params.social]]
-        name = "github"
-        icon = "github"
-        url = "https://github.com/TheInvisibleFoe"
-        weight = 40 
+# Show a global language switcher in the navigation bar
+enableGlobalLanguageMenu = true
+
+# Metadata mostly used in document's head
+description = "My new homepage or blog"
+keywords = "homepage, blog"
+images = [""]
+[[params.social]]
+name = "lastfm"
+icon = "Last.fm"
+url = "https://www.last.fm/user/Sab2004"
+weight = 40
+[[params.social]]
+name = "github"
+icon = "github"
+url = "https://github.com/TheInvisibleFoe"
+weight = 40
 
 [taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
+category = "blog"
+tag = "tags"
+series = "series"
 
 
 [languages]
-  [languages.en]
-    title = "Welcome to the Octopus' Garden"
-    keywords = ""
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
+[languages.en]
+title = "Welcome to the Octopus' Garden"
+keywords = ""
+copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+readOtherPosts = "Read other posts"
 
-  [languages.en.params]
-    subtitle  = "Heya people, I am Sabarno Saha. Just here testing out my website"
+[languages.en.params]
+subtitle = "Heya people, I am Sabarno Saha. Just here testing out my website"
 
-    [languages.en.params.logo]
-      logoText = "Octopus' Garden"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+[languages.en.params.logo]
+logoText = "Octopus' Garden"
+logoHomeLink = "/"
+# or
+#
+# path = "/img/your-example-logo.svg"
+# alt = "Your example logo alt text"
 
-  # And you can even create generic menu
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
-    weight = 1
-  [[menu.main]]
-    identifier = "about"
-    name = "About me"
-    url = "/about"
-    weight = 2
+# And you can even create generic menu
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/posts"
+weight = 1
+[[menu.main]]
+identifier = "aotw"
+name = "AoTW"
+url = "/AoTW"
+weight = 1
+[[menu.main]]
+identifier = "about"
+name = "About me"
+url = "/about"
+weight = 2
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]
