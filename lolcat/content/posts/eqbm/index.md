@@ -45,9 +45,9 @@ We can see that the width increases with increase in the standard deivation. Thi
 Most of the physical processes that we study in classical statistical
 physics is modelled as Markov Chains.
 
- {{< callout type="info" title="Stochastic Process" >}}
+ {{< callout type="info" title="Markov Property" >}}
 
-Markov Property Let \(\{X_n\}\) be a stochastic process. The markov
+Let \(\{X_n\}\) be a stochastic process. The markov
 property is defined as
 \[\mathbb{P}(X_{n+1}|X_n,X_{n-1},...,X_0) = \mathbb{P}(X_{n+1}|X_n)\]
 Any stochastic process satisfying the Markov property is called a Markov
@@ -122,7 +122,7 @@ The change in probability of being in state \(x\) at time \(t\) is the
 **inflow** of probability from all other states which is
 \(k_{xx'}p(x';t)\) minus the **outflow** of probability \(k_{x'x}p(x;t)\).
 We can now write the master equation as
-\[\dv{p(x;t)}{t} = \sum_{x' \in S} k_{xx'}p(x';t) - k_{x'x}p(x;t)\] This
+\[\frac{\partial p(x;t)}{\partial t} = \sum_{x' \in S} k_{xx'}p(x';t) - k_{x'x}p(x;t)\] This
 becomes clearer when we define the probability current.
 
 
@@ -155,7 +155,7 @@ current as \[J_{xx'} = k_{xx'}p(x';t) - k_{x'x}p(x;t)\]
 {{< /callout >}}
 
 The master equation can now be written as
-\[\dv{p(x;t)}{t} = \sum_{x' \in S} J_{xx'}\]
+\[\frac{\partial p(x;t)}{\partial t} = \sum_{x' \in S} J_{xx'}\]
 
 A bit of physics coming up ahead \(:)\)
 
@@ -177,8 +177,8 @@ nodes of the graph represent the states \(x\) and the arrows(edges)
 non-zero transition rates(\(k_{xx'}>0\)).
 
  {{< callout type="info" title="Some Physics" >}}
- The **jump networks** dealt with in physics are **strongly
-connected**. That is, given any two states \(x\) and \(x'\), there is a
+ The jump networks dealt with in physics are strongly
+connected. That is, given any two states \(x\) and \(x'\), there is a
 non-zero probability of transitioning from \(x\) to \(x'\) in a finite
 number of steps.
 {{< /callout >}}
@@ -188,7 +188,7 @@ This property has some physical justification. Coupled together with
 microscopic reversibility, this property ensures that the graphs aren't
 disconnected. Disconnected graphs often lead to systems with
 non-interacting components, which can be studied independently reducing
-to the strongly connected graph.\
+to the strongly connected graph.
 
 
 
@@ -204,7 +204,7 @@ to hold.*
 
 Here are is an example of a jump network :
 
-![Source : [1]](jump network.png){width="4in"}
+![Source : [1]](jumpnetwork.png)
 
 
 # Steady State & Equilibrium Distribution
@@ -220,7 +220,7 @@ than that of a steady state.
 The necessary condition for both to hold is that the probability of
 being in a state \(x\) at time \(t\) is independent of time. Thus,
 essentially our master equation equates to \(0\).
-\[\dv{p^{st}(x)}{t} = \sum_{x' \neq x} J_{xx'} = 0\]
+\[\frac{\partial p^{st}(x)}{\partial t} = \sum_{x' \neq x} J_{xx'} = 0\]
 
 We will show that under certain conditions, the system relaxes to a
 stationary state. \[\lim_{t \to \infty} p(x;t) = p^{st}(x)\]
@@ -311,7 +311,7 @@ in a finite number of steps. Thus our markov chain is irreducible.
 
 ### Strongly Connected Graphs
 
-![Source : Wikipedia](scc.png){width="4in"}
+![Source : Wikipedia](scc.png)
 
 
 
@@ -322,18 +322,17 @@ in a finite number of steps. Thus our markov chain is irreducible.
 
 -   A matrix \(\mathbb{A}\) is called primitive if there exists a positive
     integer \(k\) such that \(\mathbb{A}^k\) is a positive matrix (i.e. all
-    elements are positive).
+    elements are positive).<br>
 
 -   A matrix \(\mathbb{A}\) is primitive if it has only one eigenvalue on
-    the spectral circle.
+    the spectral circle.<br>
 
 -   A non-negative irreducible matrix \(\mathbb{A}\) is primitive with
     \(r = \rho(\mathbb{A})\) iff
-    \(\lim_{k \to \infty} (\mathbb{A}\slash r)^k\) exists, in which case
+    \(\lim_{k \rightarrow \infty} \)\((\mathbb{A} / r)^k\) exists, in which case
     \[\lim_{k \to \infty} \left(\frac{\mathbb{A}}{r}\right)^k = \frac{p q^{T}}{q^{T} p} > 0\]
     where \(p\) and \(q\) are the Perron vectors for \(\mathbb{A}\) and
-    \(\mathbb{A}^T\) respectively.
-
+    \(\mathbb{A}^T\) respectively.<br>
 
 {{< /callout >}}
 
@@ -341,20 +340,20 @@ in a finite number of steps. Thus our markov chain is irreducible.
 ### The Perron Frobenius Theorem
 
  {{< callout type="info" title="Perron Frobenius Theorem" >}}
- Let \(\mathbb{A}\) be an irreducible matrix.
+ Let \(\mathbb{A}\) be an irreducible matrix.<br>
 
 -   There exists a positive real number \(\lambda\) such that
     \[\mathbb{A}\pi = \lambda \pi\] called the Perron-Frobenius
     eigenvalue. Moreover, the eigenvalue is the spectral radius of the
-    matrix.
+    matrix.<br>
 
 -   The eigenspace corresponding to the Perron-Frobenius eigenvalue is
     one-dimensional, that is, the corresponding eigenvector is
-    non-degenerate.
+    non-degenerate. <br>
 
 -   Then there exists a unique probability vector \(\pi\) such that
     \[\mathbb{A}\pi =  \lambda \pi\] called the Perron vector. Moreover,
-    the vector \(\pi\) is strictly positive.
+    the vector \(\pi\) is strictly positive.<br>
 
 -   Furthermore, there are no non-negative eigenvectors of \(\mathbb{A}\)
     except for all positive multiples of \(\pi\).
@@ -404,9 +403,6 @@ respectively. The perron vector for \(\bold{P}^T\) is \(e\) and let the
 perron vector for \(\bold{P}\) be \(\pi\).
 
 
-
-### Stationary State Distribution
-
 We thus have,
 \[\lim_{k \to \infty} \bold{P}^k = \frac{\pi e^T}{e^T \pi}\] From the
 conservation of probability we have that \(\sum_i \pi_i =1\), we have that
@@ -421,7 +417,6 @@ distribution \(p(0)\) here.
 
 
 
-### Stationary State Distribution
 
 We now actually verify that \(\pi\) is indeed the stationary distribution.
 Let us recast the master equation into matrix form.
@@ -435,9 +430,8 @@ Now the stationary distribution must be unique since the Perron root of
 any irreducible matrix has a one dimensional eigenspace. Thus the
 eigenvector must be unique due to the conservation of probability.
 
+\[ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \square\]
 
-
-### Stationary state Distribution
 
 SIDE NOTE: After completing the presentation, I found a proof that
 doesn't use Perron Frobenius theorem. However, that only proves it for a
@@ -445,7 +439,6 @@ transition rate matrix with all positive entries.[1]
 
 
 
-### Stationary state Distribution
 
  {{< callout type="info" title="Stationary State Dist." >}}
  for Imprimitive matrices Let \(P\) be the
@@ -588,7 +581,14 @@ satisfied for acyclic networks.
 
 
 
-Questions?
+# That's all folks
+
+Somehow in all of this quite convoluted and somewhat fun maths is the physical result that we can attain equilibrium under certain conditions.
+This has been the quite abrupt end of my first blog. I never know how to end, so I'll end on an unoriginal quote that makes absolutely zero sense in this context.
+
+```
+            He who has the biscuits gets to tell the story.
+```
 
 
 # Danke Schön
