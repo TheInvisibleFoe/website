@@ -5,60 +5,20 @@ title = "Equilibrium Innit"
 +++
 
 
-<!-- ### Introduction
-
-1.  Stochastic Description
-
-    -   Stochastic Processes
-
-    -   Markov Chains
-
-    -   CTMC
-
-    -   Transition Rate Matrix
-
-2.  Steady State and Equilibrium Distribution
-
-    -   Conditions
-
-    -   Detailed Balance Condition
-
-3.  Perron Frobenius Theorem
-
-    -   Irreducibility
-
-    -   Strongly connected graphs
-
-    -   Stationary State distribution
-
-
-
-### Introduction(Contd.)
-
-5.  Graph/ Network Theory
-
-    -   Graphs
-
-    -   Trees
-
-    -   Handshaking lemma
-
-    -   An \"obvious\" theorem
-
-6.  Equilibrium Distribution -->
-
 # Introduction
 This is technically my first blog post containing actual material here. I gave a presentation for the Maths Club at my University. 
 The slides for which were made in LaTeX using beamer and can be found [here](https://raw.githubusercontent.com/TheInvisibleFoe/IISER_notes/main/IdentPres/slides/main.pdf), on my GitHub. I just converted the latex document to markdown using Pandoc and after some minor tweaks, I have posted it here. The blog aims to demonstrate how to deal with statistically large systems(systems with a large number of degrees of freedom) and the conditions under which they might attain equilibrium. Enjoy :)
 
 # A Stochastic Description
 
+I should probably start by giving an introduction to this stochastic stuff. Thermodynamics is a topic a lot of us are familiar with. What happens in thermodynamics? 
+We have something we want to study(a system) and everything else(the surroundings). In thermodynamics, we take large systems, large I mean systems with a large number of particles. A system with a 
+small number of particles can't help us glean information on macroscopic properties. We can't measure the velocities of say even 100 particles for a large amout of time, and conclude anything useful. 
+Rather, we observe large systems and infer their macroscopic properties, like Temperature and pressure. Our first stepping stone into understanding how we get from the microscopic description to the phenomenologically modeled thermodynamics, is statistical mechanics. For inferring stuff using statistical mechanics, we take some number of particles and then scale the system to reach thermodynamics. 
 
-Let us start with a closed rectangle with the "usual" topology.
-Now let us identify the two opposite edges point by point to
-each other, such that each vertex gets identified to the vertex that is diagonally across. 
+Here, we are interested in a length scale between microscopic and macroscopic scales, the mesoscopic regime. Here, again the number of particles are quite large enough for particle by particle descriptions to be completely useless and the number of particles aren't large enough for a thermodynamic description to make sense.
 
-
+So here, we initially lay out how we model such systems. We take particles, but instead of following the particles trajectory and accounting for all the forces exerted, say from the collisions, the particle to particle interactions, temperature fluctuations and all other phenomenon a sane person can describe. So what we do here is chalk every force that can be to some random force following some rules. So we describe these systems, using Newton's third alongwith a random force, often fancifully called the *Langevin Equation*. For further information you can refer to [1][3].
 ### Stochastic Process
 
 {{< callout type="info" title="Stochastic Process" >}}
@@ -72,7 +32,13 @@ An example would be Brownian Motion, which is described by the Wiener
 process.
 \[P(\hat{W}(t+\Delta t)=x | \hat{W}(t)=x') = \frac{1}{\sqrt{2 \pi \Delta t}}\exp(-\frac{(x-x')^2}{2 \Delta t})\]
 
+Let's see what this equation says. Suppose we have a particle moving in 1D, at a position \(x = x'\) at \(t = t_0\). Then the probability of finding the particle at some position \(x\) after some time \(\Delta t\), is described by a gaussian distribution \(N(x',\Delta t)\). This equation makes sense intuitively. The gaussian probability peaks at the mean \(x'\) and a measure of its spread is given by \(\Delta t\). Here is a small illustration,
 
+![Gaussian with different spreads \(\sigma\)](normal_dist_std.png)
+
+We can see that the width increases with increase in the standard deivation. This just means if we take a larger time step \(\Delta t\), the particle has more time to move to further and further distances, and the distribution flattens. Let's see what the Wiener Process looks like, before we move onto the topic of this blog. 
+
+![Brownian Motion ](brownian_motion.png)
 
 ### Markov Chains
 
@@ -421,7 +387,7 @@ matrix \(P\).
 
 ### Stationary State Distribution
 
-[**Proof:** ]{.underline}\
+**Proof**\
 All stochastic matrices \(\bold{P}\) have a spectral radius
 \(\rho(\bold{P}) =1\). All column sums equal to 1. Thus, \(e\) is an
 eigenvector of \(\bold{P}^T\) with eigenvalue \(1\), where \(e\) is the column
@@ -551,7 +517,7 @@ vertex and \(|E|\) is the number of edges.
  A tree has at least two vertices of degree 1.
 
 
-[**Proof**]{.underline}\
+**Proof**\
 Every tree has \(n-1\) edges, so the sum of the degrees of all vertices of
 any tree has to be \(2(n-1)\). But if there are fewer than two vertices of
 degree one, then the sum of the degrees of all vertices must be at least
@@ -570,7 +536,7 @@ stationary state distribution is the equilibrium distribution.
 
 {{< /callout >}}
 
-[**Proof**]{.underline}\
+**Proof**\
 We know that there exists at least \(2\) vertices with degree \(1\). Let us
 label one of them as \(x\). Thus, for this vertex
 \(\sum_{x' \neq x} J_{xx'} = 0\) for all states \(x'\) connected to it,
@@ -626,8 +592,7 @@ Questions?
 
 
 # Danke Schön
-
-
+*Feel free to direct your feddback and curses to my email: [iamsabarno@gmail.com](mailto:iamsabarno@egmail.com)* 
 ### References
 
 [1] : Luca Peliti and Simone Pigolotti, Stochastic Thermodynamics, Princeton University Press, Princeton, NJ, 2023.
