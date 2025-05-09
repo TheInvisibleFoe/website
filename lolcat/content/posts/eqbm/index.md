@@ -34,11 +34,11 @@ process.
 
 Let's see what this equation says. Suppose we have a particle moving in 1D, at a position \(x = x'\) at \(t = t_0\). Then the probability of finding the particle at some position \(x\) after some time \(\Delta t\), is described by a gaussian distribution \(N(x',\Delta t)\). This equation makes sense intuitively. The gaussian probability peaks at the mean \(x'\) and a measure of its spread is given by \(\Delta t\). Here is a small illustration,
 
-![Gaussian with different spreads \(\sigma\)](normal_dist_std.png)
+![Gaussian with different spreads \(\sigma\)](normal_dist_std.png?width=800px)
 
 We can see that the width increases with increase in the standard deivation. This just means if we take a larger time step \(\Delta t\), the particle has more time to move to further and further distances, and the distribution flattens. Let's see what the Wiener Process looks like, before we move onto the topic of this blog. 
 
-![Brownian Motion ](brownian_motion.png)
+![Brownian Motion ](brownian_motion.png?width=800px)
 
 ### Markov Chains
 
@@ -204,7 +204,7 @@ to hold.*
 
 Here are is an example of a jump network :
 
-![Source : [1]](jumpnetwork.png)
+![Source : [1]](jumpnetwork.png?width=800px)
 
 
 # Steady State & Equilibrium Distribution
@@ -311,7 +311,7 @@ in a finite number of steps. Thus our markov chain is irreducible.
 
 ### Strongly Connected Graphs
 
-![Source : Wikipedia](scc.png)
+![Source : Wikipedia](scc.png?width=800px)
 
 
 
@@ -478,7 +478,13 @@ distribution. However, we won't deal with it here.
 -   A connected graph is a graph where there is a path between every
     pair of vertices.
 
-
+![Source: The Internet](/eqbm/drawing-stars.png#center)
+<!-- {{ with resources.Get "drawing-stars.png" }}
+  {{ with .Resize "300x" }}
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+  {{ end }}
+{{ end }} -->
+<img src="/eqbm/drawing-stars.png" style="width:10%;">
 
 ### Trees
 

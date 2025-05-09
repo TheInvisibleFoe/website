@@ -9,6 +9,10 @@ paginate = 10
 # [[module.imports]]
 #     path = 'github.com/hugomods/katex'
 
+[module]
+[[module.imports]]
+path = 'github.com/hugomods/images'
+disable = false
 
 [params]
 dateform = "Jan 2, 2006"
