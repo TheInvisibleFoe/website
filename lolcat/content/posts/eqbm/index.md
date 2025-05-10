@@ -77,11 +77,6 @@ Kolmogorov equation as
 \(t > t' > t_0\)
 {{< /callout >}}
 
-
-
-
-### Continuous Time Markov Chains(CTMC)
-
 We now choose a time interval \(dt\) and rewrite the Chapman Kolmogorov
 equation, dropping the explicit dependence on \(x_0,t_0\)
 \[P(s;t+dt) = \sum_{s' \in S} P(s;t+dt|s';t)P(s';t)\] Since this is an
@@ -108,7 +103,6 @@ Thus we can write \[\mathbb{P}(t+dt) = \mathbb{I} + Qdt\] where
 
 
 
-### Transition Rate Matrix
 
 We define \(k_{xx'}\) as the jump rate from state \(x'\) to \(x\). We thus
 define the elements of the transition rate matrix as
@@ -191,16 +185,11 @@ non-interacting components, which can be studied independently reducing
 to the strongly connected graph.
 
 
-
-### Jump Networks
-
 *Strongly connected graphs also posses a property called Irreducibility.
 Irreducibility is a necessary condition for the Perron Frobenius theorem
 to hold.*
 
 
-
-### Jump Networks
 
 Here are is an example of a jump network :
 
@@ -270,7 +259,6 @@ Perron Frobenius theorem to hold.*
 
 
 
-### Irreducibility
 
 We can reframe the Irreducibility problem in terms of graphs.
 
@@ -309,7 +297,6 @@ in a finite number of steps. Thus our markov chain is irreducible.
 
 
 
-### Strongly Connected Graphs
 
 ![Source : Wikipedia](scc.png?width=800px)
 
@@ -384,7 +371,6 @@ matrix \(P\).
 
 
 
-### Stationary State Distribution
 
 **Proof**\
 All stochastic matrices \(\bold{P}\) have a spectral radius

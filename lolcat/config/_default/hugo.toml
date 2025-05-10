@@ -79,9 +79,9 @@ name = "Blog"
 url = "/posts"
 weight = 1
 [[menu.main]]
-identifier = "aotw"
-name = "AoTW"
-url = "/AoTW"
+identifier = "links"
+name = "Stuff"
+url = "/links"
 weight = 1
 [[menu.main]]
 identifier = "about"
