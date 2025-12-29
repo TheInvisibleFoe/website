@@ -19,3 +19,9 @@ I like listening to music, sometimes a bit too much. Here's my [last.fm](https:/
 + [The Silent Sea](https://open.spotify.com/album/3EnuabTWwljjKXRfjyePy3) - *Advaita*
 + [Behosh](https://open.spotify.com/album/4MVMFJebPTeT3fGGy4prRs) - *Parvaaz*
 + [Baran](https://open.spotify.com/album/55GDDioOnYUTA3NtfZcqMx) - *Parvaaz*
+
+Anyways here might be some useful links related to me.
++ [CV](https://www.overleaf.com/read/hhssjbkqbvmk#259a37) : *An overleaf link to my CV :)*
++ [Github](https://github.com/TheInvisibleFoe) :*My Github*
++ [Last.fm](https://www.last.fm/user/Sab2004) :*Last.fm*
+

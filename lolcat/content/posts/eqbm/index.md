@@ -2,6 +2,8 @@
 author =  "Sabarno Saha"
 date= 2025-04-04
 title = "Equilibrium Innit"
+[params]
+  math = true
 +++
 
 
@@ -30,7 +32,8 @@ indexing of the variables often carries the notion of time.
 
 An example would be Brownian Motion, which is described by the Wiener
 process.
-\[P(\hat{W}(t+\Delta t)=x | \hat{W}(t)=x') = \frac{1}{\sqrt{2 \pi \Delta t}}\exp(-\frac{(x-x')^2}{2 \Delta t})\]
+
+\\[P(\\hat{W}(t+\\Delta t)=x | \\hat{W}(t)=x') = \\frac{1}{\\sqrt{2 \\pi \\Delta t}}\\exp(-\\frac{(x-x')^2}{2 \\Delta t})\\]
 
 Let's see what this equation says. Suppose we have a particle moving in 1D, at a position \(x = x'\) at \(t = t_0\). Then the probability of finding the particle at some position \(x\) after some time \(\Delta t\), is described by a gaussian distribution \(N(x',\Delta t)\). This equation makes sense intuitively. The gaussian probability peaks at the mean \(x'\) and a measure of its spread is given by \(\Delta t\). Here is a small illustration,
 
@@ -195,6 +198,15 @@ Here are is an example of a jump network :
 
 ![Source : [1]](jumpnetwork.png?width=800px)
 
+<!--
+Source - https://stackoverflow.com/a
+Posted by waldyr.ar, modified by community. See post 'Timeline' for change history
+Retrieved 2025-12-29, License - CC BY-SA 4.0
+-->
+
+<p align="center">
+  <img src="jumpnetwork.png" />
+</p>
 
 # Steady State & Equilibrium Distribution
 
@@ -464,14 +476,7 @@ distribution. However, we won't deal with it here.
 -   A connected graph is a graph where there is a path between every
     pair of vertices.
 
-![Source: The Internet](/eqbm/drawing-stars.png#center)
-<!-- {{ with resources.Get "drawing-stars.png" }}
-  {{ with .Resize "300x" }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
-  {{ end }}
-{{ end }} -->
-<img src="/eqbm/drawing-stars.png" style="width:10%;">
-
+![Source: The Internet](/eqbm/drawing-stars.png)
 ### Trees
 
  {{< callout type="info" title="Trees" >}}
@@ -584,7 +589,7 @@ This has been the quite abrupt end of my first blog. I never know how to end, so
 
 
 # Danke Schön
-*Feel free to direct your feddback and curses to my email: [iamsabarno@gmail.com](mailto:iamsabarno@egmail.com)* 
+*Feel free to direct your feedback and curses to my email: [iamsabarno@gmail.com](mailto:iamsabarno@egmail.com)* 
 ### References
 
 [1] : Luca Peliti and Simone Pigolotti, Stochastic Thermodynamics, Princeton University Press, Princeton, NJ, 2023.

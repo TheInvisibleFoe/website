@@ -6,3 +6,12 @@
     {{ end }}
     {{ with .Title}} style="width: 100%; max-width: {{ . }};"{{ end }}
     />
+{{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{ if .Title }}
+
+  
+  {{ .Title }}
+
+{{ else }}
+
+{{ end }}

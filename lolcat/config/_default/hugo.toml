@@ -4,7 +4,7 @@ title = 'lolcat'
 
 theme = "hello-friend-ng"
 # theme = "FixIt"
-paginate = 10
+pagination.pagerSize = 10
 # [module]
 # [[module.imports]]
 #     path = 'github.com/hugomods/katex'
@@ -22,11 +22,17 @@ dateformNumTime = "2006-01-02 15:04"
 math = true
 
 # Subtitle for home
-homeSubtitle = "They are taking the Hobbits to Isengard"
+homeSubtitle = "“Now, I may be an idiot, but there's one thing I am not sir, and that, sir, is an idiot.” "
 
 # Set disableReadOtherPosts to true in order to hide the links to other posts.
 disableReadOtherPosts = false
-
+# Enable theme toggle
+# 
+# This options enables the theme toggle for the theme. 
+# Per default, this option is off. 
+# The theme is respecting the prefers-color-scheme of the operating system. 
+# With this option on, the page user is able to set the scheme he wants. 
+enableThemeToggle = true
 # Enable sharing buttons, if you like
 enableSharingButtons = true
 
@@ -56,7 +62,7 @@ series = "series"
 
 [languages]
 [languages.en]
-title = "Welcome to the Octopus' Garden"
+title = "Welcome to the Octopus's Garden"
 keywords = ""
 copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 readOtherPosts = "Read other posts"
@@ -65,7 +71,7 @@ readOtherPosts = "Read other posts"
 subtitle = "Heya people, I am Sabarno Saha. Just here testing out my website"
 
 [languages.en.params.logo]
-logoText = "Octopus' Garden"
+logoText = "Octopus's Garden"
 logoHomeLink = "/"
 # or
 #
@@ -88,6 +94,16 @@ identifier = "about"
 name = "About me"
 url = "/about"
 weight = 2
+# [markup]
+# [markup.goldmark]
+# [markup.goldmark.extensions]
+# [markup.goldmark.extensions.passthrough]
+# enable = true
+# [markup.goldmark.extensions.passthrough.delimiters]
+# block = [['\[', '\]'], ['$$', '$$']]
+# inline = [['\(', '\)']]
+#
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.extensions]
