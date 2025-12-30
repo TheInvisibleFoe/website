@@ -2,48 +2,70 @@
 author = "Sabarno Saha"
 date= 2025-12-26
 title = "FPUT"
-draft = true
 [params]
   math = true
 +++
 
+Continuing the lazy turn of events, the second blog on my very "frequently updated" website, is brought to you
+by another term project of mine, courtesy of my Non linear Dynamics professor and the geniuses over at Los Alamos,namely 
+Enrico Fermi, John Pasta, Stanislaw Ulam and Mary Tsingou. More commonly known as the FPUT problem, the methods used and the conclusions
+reached in this paradox-of-the-decade have heralded the age of computational physics and a more nuanced study of CHAOS.
+
+I had submitted a report for evaluation of the term project, which I have, similar to my previous blog, converted from LaTex to Markdown using
+the All-Mighty `pandoc`. So I invite you to brew a cup of masala chai, put your glasses on, and start reading this terribly written blogpost of mine.
+
 # History
+
+
+ <!-- {{< callout type="success" title="" >}}
 
 <figure id="fig:combined" data-latex-placement="h!">
 <figure id="fig:1a">
 <img src="images/fermi.jpg" />
-<figcaption>Enrico Fermi</figcaption>
+<figcaption><center>Enrico Fermi</center></figcaption>
 </figure>
 <figure id="fig:1b">
 <img src="images/pasta.jpg" />
-<figcaption>John Pasta</figcaption>
+<figcaption><center>John Pasta</center></figcaption>
 </figure>
 <figure id="fig:1c">
 <img src="images/ulam.jpg" />
-<figcaption>Stanislaw Ulam</figcaption>
+<figcaption><center>Stanislaw Ulam</center></figcaption>
 </figure>
 <figure id="fig:1d">
 <img src="images/tsingou.jpg" />
-<figcaption>Mary Tsingou</figcaption>
+<figcaption><center>Mary Tsingou</center></figcaption>
 </figure>
-<figcaption>The Fermi-Pasta-Ulam-Tsingou Team</figcaption>
+<figcaption><center>The Fermi-Pasta-Ulam-Tsingou Team</center></figcaption>
 </figure>
+{{< /callout >}} -->
 
 In light of the new MANIAC(Metropolis and von Neumann Install Awful
-Computers) computer, Fermi, Pasta, Ulam, and Tsingou[@FPU] set out to
+Computers, acronym courtesy Gamow) computer, Fermi, Pasta, Ulam, and Tsingou[[13](#references)] set out to
 study some physical problem using numerical simulations. They chose to
 study a 1D chain of particles connected by nonlinear springs. Their goal
 was to understand how energy would distribute among the normal modes of
 the system over time, expecting that the nonlinearity would lead to
 thermalization and equipartition of energy among the modes.
+ {{< callout type="success" title="" >}}
 
+<figure id="fig:authors" data-latex-placement="H">
+<img src="images/fput.png" style="width:40.0%" />
+<figcaption><center><center>The 4 main characters in this drama.</center></center></figcaption>
+</figure>
+<!-- ![actionangle](images/tori.png?width=900px "lol") -->
+
+{{< /callout >}}
 We first introduce the FPUT problem and its original expectations. Then
 we will gloss over the backdrop of hamiltonian systems and ergodicity.
 Finally, we will discuss the surprising results. Then we try to answer
 some questions that arise from the problem. Then we try to see some
 possible solutions to the problem. Finally, we connect the richness of
 this problem with statistical mechanics. For this, we will use
-[5] and [1] as our main references.
+[[5](#references)] and [[1](#references)] as our main references. 
+
+For the more interested reader with higher levels of motivation and reading prowess than 
+the nincompoop author of this blog, can also refer to the extensive review by Giovanni Gallavotti[[6](#references)]
 
 # Problem Setup
 
@@ -119,12 +141,23 @@ motion can be mapped to an invariant torus in the appropriate phase
 space. The action represents radii of the tori, while the angle variable
 describes the evolution on the surface of the tori.
 
+<!-- <figure id="fig:integrable_torus" data-latex-placement="H">
+<img src="images/tori.png" style="width:40.0%" />
+<figcaption><center>Invariant Torus in Phase Space for a system with 2 Degrees
+of Freedom, therefore 2 Action Variables.</center></figcaption>
+</figure> -->
+
+
+ {{< callout type="success" title="" >}}
+
 <figure id="fig:integrable_torus" data-latex-placement="H">
 <img src="images/tori.png" style="width:40.0%" />
-<figcaption>Invariant Torus in Phase Space for a system with 2 Degrees
-of Freedom, therefore 2 Action Variables.</figcaption>
+<figcaption><center>Invariant Torus in Phase Space for a system with 2 Degrees
+of Freedom, therefore 2 Action Variables.</center></figcaption>
 </figure>
+<!-- ![actionangle](images/tori.png?width=900px "lol") -->
 
+{{< /callout >}}
 ## A result a la Poincaré
 
 Consider perturbed Hamiltonians of the form:
@@ -141,7 +174,7 @@ than the Hamiltonian itself.
 {{< /callout >}}
 
 
-A nice sketch of this proof can be seen at [5]. Basically, when
+A nice sketch of this proof can be seen at [[5](#references)]. Basically, when
 Poincaré starts with the Hamiltonian \(H = H_0 + \mu H_1\). Then he looks
 for constants of the motion of the form:
 \[\Phi(Q, P,\mu) = \sum_{k=0}^\infty \Phi(Q,P)\] where \(Q,P\) are the
@@ -193,15 +226,18 @@ spreading out evenly among all modes, it exhibited a phenomenon known as
 \"recurrence,\" where the energy returned to the initially excited mode
 after some time.
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
 <img src="images/original_plot.png" style="width:35.0%" />
-<figcaption>Original FPUT Simulation Results showing Recurrence
+<figcaption><center>Original FPUT Simulation Results showing Recurrence
 Phenomenon with parameters: N=32, <span
 class="math inline"><em>α</em> = 0.25</span>, <span
 class="math inline"><em>δ</em><em>t</em> = 1/8</span> and the initial
 condition being the first normal mode excited. The total simulation is
-done over 30000 time units.</figcaption>
+done over 30000 time units.</center></figcaption>
 </figure>
+{{< /callout >}}
 
 # Numerical Simulation
 
@@ -216,41 +252,62 @@ Velocity-Verlet integration methods to solve the equations of motion.
   that is more accurate and better at conserving energy in Hamiltonian
   systems.
 
+  A nice handout on these simulations can be found at [[7](#references)]
+
 ## Euler Method
 
-![modeeuler](images/mode_energy_alpha_0.25_beta_0.0_tmax_10000.0.png?width=900px)
+ {{< callout type="success" title="" >}}
 
-![totaleuler1](images/total_energy_alpha_0.25_beta_0.0_tmax_10000.0.png?width=900px)
-<!-- <figcaption>We do need to verify energy conservation in our simulations.
+
+<figure data-latex-placement="H">
+<img src="images/mode_energy_alpha_0.25_beta_0.0_tmax_10000.0.png"
+style="width:75.0%" />
+<figcaption><center>Simulation Results of the <span
+class="math inline"><em>α</em></span> model using Euler Method
+with parameters: N=32, <span
+class="math inline"><em>α</em> = 0.25</span>, <span
+class="math inline"><em>δ</em><em>t</em> = 0.1</span></center></figcaption>
+</figure>
+
+<figure data-latex-placement="H">
+<img src="images/total_energy_alpha_0.25_beta_0.0_tmax_10000.0.png"
+style="width:75.0%" />
+<figcaption><center>We do need to verify energy conservation in our simulations.
 Here is the total energy plot for the above simulation using Euler
-Method. </figcaption>
-</figure> -->
+Method.</center></figcaption>
+</figure>
+{{< /callout >}}
+
 
 ## Velocity Verlet
+
+ {{< callout type="success" title="" >}}
+
 
 <figure data-latex-placement="H">
 <img src="images/modes_FPUT_verlet_alpha_0.25_TMAX_50000.0.png"
 style="width:75.0%" />
-<figcaption>Simulation Results of the <span
+<figcaption><center>Simulation Results of the <span
 class="math inline"><em>α</em></span> model using Velocity-Verlet Method
 with parameters: N=32, <span
 class="math inline"><em>α</em> = 0.25</span>, <span
-class="math inline"><em>δ</em><em>t</em> = 0.1</span></figcaption>
+class="math inline"><em>δ</em><em>t</em> = 0.1</span></center></figcaption>
 </figure>
 
 <figure data-latex-placement="H">
 <img src="images/total_energy_FPUT_verlet_alpha_0.25_TMAX_50000.0.png"
 style="width:75.0%" />
-<figcaption>We again verify the total energy conservation in the
-Velocity-Verlet algorithm.</figcaption>
+<figcaption><center>We again verify the total energy conservation in the
+Velocity-Verlet algorithm.</center></figcaption>
 </figure>
+{{< /callout >}}
 
 We have seen that the numerical simulations do not match the theoretical
 predictions by the original creators of this model. There are some
 questions that need to answered, in light of this discrepancy between
 the theoretical and numerical predictions.
 
-# Fermi's Proof problem
+# Fermi's Folly
 
 The proof by Fermi has been shown to be incorrect. To see this, a
 landmark theorem by Kolmogorov, Arnold and Moser is required.
@@ -287,9 +344,11 @@ invariant under Hamiltonian flow, is analytic. The work by Kolmogorov,
 shows that these surfaces are not analytic, and are in fact
 \"pathological monstrosities\".
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
 <img src="images/KAM.png" style="width:45.0%" />
-<figcaption>In the left is seen a set of nested tori with a cutaway
+<figcaption><center>In the left is seen a set of nested tori with a cutaway
 showing a Poincaré surface of section. An exploded view of this surface
 of section is shown on the right. The circles represent preserved tori.
 The first signs of instability are represented by the alternating
@@ -298,8 +357,9 @@ origin, one sees intersecting invariant curves in whose neighborhood lie
 trajectories which are realizations of random processes. But the true
 complexity implied by this picture is that it is replicated about each
 elliptic fixed point in the figure and in each replication ad infinitum.
-Source <span class="citation" data-cites="Ford1992"></span></figcaption>
+Source [5].</span></center></figcaption>
 </figure>
+{{< /callout >}}
 
 # Inquisitions
 
@@ -344,13 +404,16 @@ to initial conditions.
 As a result, we get a clue that the FPUT system might be chaotic for
 higher perturbations or energies.
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
-<p>[h!] <img src="images/HenonHeiles_850.png" style="width:60.0%"
+<p> <img src="images/HenonHeiles_850.png" style="width:60.0%"
 alt="image" /></p>
-<figcaption>Poincaré surface of the Hénon-Heiles system showing chaotic
+<figcaption><center>Poincaré surface of the Hénon-Heiles system showing chaotic
 behavior at higher energies. <span class="citation"
-data-cites="hhwolfram"></span></figcaption>
+data-cites="hhwolfram"></span></center></figcaption>
 </figure>
+{{< /callout >}}
 
 ## Does the FPUT system not thermalize at all, or does it thermalize over very long timescales?
 
@@ -358,14 +421,17 @@ After some time of evolution, we see a dip in the energy of the first
 mode. People had conjectured that over longer timescales, the system
 might thermalize.
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
 <img src="images/mode_energy_alpha_0.25_beta_0.0_tmax_30000.0.png"
 style="width:70.0%" />
-<figcaption>Longer time simulation of the <span
+<figcaption><center>Longer time simulation of the <span
 class="math inline"><em>α</em></span> model using Euler Method. We see a
 steady dip in energy of the first mode over successive
-recurrences.</figcaption>
+recurrences.</center></figcaption>
 </figure>
+{{< /callout >}}
 
 ### Super Period
 
@@ -374,47 +440,58 @@ longer, we see some sort of super recurrence. Almost all of the energy(
 over 99%) flows back into the first mode. The super period was first
 observed by Tuck and Tsingou(then Menzel) in 1972.
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
 <img src="images/tucksuper.png" style="width:50.0%" />
-<figcaption>Original Tuck and Tsingou simulation showing super period of
+<figcaption><center>Original Tuck and Tsingou simulation showing super period of
 recurrence. The super period is approximately 52 times the normal
 recurrence period. <span class="citation"
-data-cites="tucktsingou"></span></figcaption>
+data-cites="tucktsingou"></span></center></figcaption>
 </figure>
+{{< /callout >}}
+
 
 We simulated the same using both Euler and Velocity Verlet algorithms.
 We observe super periods in both methods, however for the euler method,
 quite less than 99% of energy returns to the first mode. This problem
 has been eliminated when the velocity verlet method is used.
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
 <img src="images/mode1_energy_alpha_0.25_beta_0.0_tmax_500000.0.png"
 style="width:60.0%" />
-<figcaption>Very long time simulation of the <span
+<figcaption><center>Very long time simulation of the <span
 class="math inline"><em>α</em></span> model using the Euler Method. We
 almost see a super period of recurrence, after which the energy returns
 to the first mode almost completely. Here, we notice a problem with the
 Euler method, as the total energy is not conserved well enough over such
-long timescales.</figcaption>
+long timescales.</center></figcaption>
 </figure>
+{{< /callout >}}
+ {{< callout type="success" title="" >}}
 
 <figure data-latex-placement="H">
 <img src="images/Mode1_fpu_superperiod_alpha_0.25_TMAX_1000000.0.png"
-style="width:70.0%" />
-<figcaption>Very long time simulation of the <span
+style="width:100.0%" />
+<figcaption><center>Very long time simulation of the <span
 class="math inline"><em>α</em></span> model using the Velocity-Verlet
 Method. We almost see a super period of recurrence, after which the
 energy returns to the first mode almost completely. Here, we notice that
 the total energy is conserved much better over such long
-timescales.</figcaption>
+timescales.</center></figcaption>
 </figure>
+{{< /callout >}}
+ {{< callout type="success" title="" >}}
 
 <figure data-latex-placement="H">
 <img src="images/Mode2_fpu_superperiod_alpha_0.25_TMAX_1000000.0.png"
-style="width:70.0%" />
-<figcaption>A super period is also observed in the second mode
-energy.</figcaption>
+style="width:100.0%" />
+<figcaption><center>A super period is also observed in the second mode
+energy.</center></figcaption>
 </figure>
+{{< /callout >}}
 
 There have been some studies that suggest that the FPUT system might
 thermalize over extremely long timescales. Similar to glassy behavior in
@@ -424,7 +501,7 @@ theorem hints that for small perturbations, there are invariant tori
 that survive. Therefore, for initial conditions lying on these tori, the
 system will not thermalize. Building on this Idea F.M. Izrailev and B.V.
 Chirikov proposed the **stochasticity threshold**, also called the
-**Chirikov criterion**[4]. According to this
+**Chirikov criterion**[[4](#references)]. According to this
 criterion, when the perturbation strength exceeds a certain threshold,
 the invariant tori break down, leading to widespread chaos in phase
 space and subsequent thermalization.The original FPUT paper considers
@@ -479,7 +556,7 @@ Korteweg-de Vries (KdV) equation. Let's see how. We shall consider the
 \(\alpha\) model for simplicity. The connection to the KdV equation is a
 tiny bit technical, so bear with me. We will show that the naive
 approach to the continuum limit does not work, and leads to unphysical
-results. We follow the approach by [12].
+results. We follow the approach by [[12](#references)].
 
 The FPUT equations of motion for the \(\alpha\) model with arbitrary \(m\)
 and \(k\) are given by:
@@ -537,7 +614,7 @@ order terms in the Taylor series expansion. Keeping terms upto order
 The additional fourth order derivative term acts as a dispersive term,
 preventing shock formation. We now differentiate w.r.t. \(x\) and define
 \(w = u_x\), to obtain,
-\[\frac{1}{c^2} w_{tt} = w_{xx} + \alpha h \frac{\partial}[2]{(w^2)}{x} + \frac{h^2}{12} w_{xxxx} + O(h^4)\]
+\[\frac{1}{c^2} w_{tt} = w_{xx} + \alpha h \frac{\partial}[[2](#references)]{(w^2)}{x} + \frac{h^2}{12} w_{xxxx} + O(h^4)\]
 
 This is known as the Boussinesq equation. This admits wave like
 solutions that do not form shocks, these are periodic water waves.
@@ -600,12 +677,11 @@ other, and found that they pass through each other without changing
 shape. Using this connection to solitons, they gave a phenomenological
 explanation for the recurrence phenomenon observed in the FPUT system.
 We now see how these solitons arise in the KdV equation, from a small
-section of the report [8].
+section of the report [[8](#references)].
 
 > Initially, the first two terms of the KdV equation dominate and the
 > classical overtaking phenomenon occurs; that is, \(u\) steepens in
-> regions where it has a negative slope.(Due to the first two terms
-> being similar to the inviscid Burgers equation). Second, after \(u\) has
+> regions where it has a negative slope. Second, after \(u\) has
 > steepened sufficiently, the third term becomes important and serves to
 > prevent the formation of a discontinuity. Instead, oscillations of
 > small wavelength (of order \(\delta\)) develop on the left of the front.
@@ -625,14 +701,18 @@ section of the report [8].
 > **Here we have a nonlinear physical process in which interacting
 > localized pulses do not scatter irreversibly.**
 
+ {{< callout type="success" title="" >}}
+
 <figure data-latex-placement="H">
 <img src="images/ZKsoliton.png" style="width:45.0%" />
-<figcaption>The dashed line is the initial condition, a half cosine
+<figcaption><center>The dashed line is the initial condition, a half cosine
 wave. At an intermediate time step (B) we see the steepening of the
 front of the wave. Then at longer (C) times, there is development of
 oscillations of smaller wavelength near the front of the
-wave.</figcaption>
+wave.</center></figcaption>
 </figure>
+{{< /callout >}}
+
 
 They explained the recurrence phenomenon on an FPUT system with periodic
 boundary conditions. These solitons arise and interfere periodically,
@@ -705,7 +785,7 @@ This principle is the cornerstone of statistical mechanics. It allows us
 to derive the microcanonical ensemble and subsequently other ensembles.
 The previous definition has a certain nuance that is often overlooked.
 The word accessible is very important here. The microcanonical ensemble
-is defined for an isolated system with fixed total energy \(E\). Suppose
+is,generally, defined for an isolated system with fixed total energy \(E\). Suppose
 for a system which has an additional constant of motion \(\Phi(p_i, q_i)\)
 . Then for a certain initial condition, both \(H(p_i, q_i)\) and
 \(\Phi(p_i, q_i)\) will be conserved. Therefore, our energy hypersurface
@@ -714,7 +794,7 @@ will be further constrained to a submanifold defined by
 given by:
 \[dP \propto \delta(H(p_i, q_i) - E) \delta(\Phi(p_i, q_i) - \phi_0) dV_\Gamma\]
 We need to ensure that there are no additional constants of motion other
-than the Hamiltonian itself, to obtain the microcanonical ensemble.
+than the Hamiltonian itself, to obtain the microcanonical ensemble in its widely used form.
 Recall that Poincaré's result states that for perturbed Hamiltonians of
 that form, there exists no constant of motion \(\Phi(Q_k, P_k, t)\) that
 is analytic in \(Q_k, P_k\) and \(\epsilon\), other than the Hamiltonian
@@ -734,14 +814,14 @@ Birkhoff, but a general proof is still unknown.
 The principle of equal a priori probabilities leads to the law of
 equipartition of energy. This is a fairly standard derivation. One can
 look at any statistical mechanics textbook for details, for example
-[@Huang]. Since equipartition of energy is a direct consequence of the
+[[9](#references)]. Since equipartition of energy is a direct consequence of the
 principle of equal a priori probabilities, FPUT decided to test this as
 a signature of ergodicity in their system.
 
-# Conclusions
+# Remarks
 
 The foundations of statistical mechanics are still not completely
-rigourously justified. Khinchin [@Khinchin2013] and Ruelle [@Ruelle1999]
+rigourously justified. Khinchin [[10](#references)] and Ruelle [[11](#references)]
 have a lot of opinions and criticisms about these foundations. The FPUT
 problem is a classic example that highlights the subtleties involved in
 these justifications. It launched the fields of studying solitons and
@@ -750,30 +830,44 @@ chaos theory.
 Moreover, FPUT forever pioneered the usage of computers in physics
 research.
 
+# That's all folks
 
-[1] G. P. Berman and F. M. Izrailev, The Fermi-Pasta-Ulam problem: Fifty years of progress, Chaos: An Interdisciplinary Journal of Nonlinear Science, vol. 15, no. 1, 2005. DOI: 10.1063/1.1855036.
+Initially the experiment was widely referred to as the FPU problem, since Mary Tsingou was only recognised in a footnote for all the programming done 
+for this experiment. A very illuminating read about the problem focusing on giving the deserving credits to Mrs. Mary Tsingou Menzel is [here](https://www.lanl.gov/media/publications/national-security-science/1220-we-thank-miss-mary-tsingou). Unlike my previous blogpost, I shall end with a relevant quote.
 
-[2] Wolfram Research, Inc., Henon–Heiles System, 2002. Available at: http://mathworld.wolfram.com/Henon-HeilesSystem.html
-.
+```
+                       We thank Miss Mary Tsingou
 
-[3] J. L. Tuck and M. T. Menzel, The superperiod of the nonlinear weighted string (FPU) problem, Advances in Mathematics, vol. 9, no. 3, pp. 399–407, 1972. DOI: 10.1016/0001-8708(72)90024-2.
+```
 
-[4] F. M. Izrailev and B. V. Chirikov, Statistical properties of a nonlinear string, Doklady Akademii Nauk SSSR, vol. 166, no. 1, pp. 57–59, 1966.
+# Danke Schön
+*Feel free to direct your feedback and curses to my email: [iamsabarno@gmail.com](mailto:iamsabarno@egmail.com)* 
 
-[5] J. Ford, The Fermi-Pasta-Ulam problem: Paradox turns discovery, Physics Reports, vol. 213, no. 5, pp. 271–310, 1992. DOI: 10.1016/0370-1573(92)90116-H.
+# References
 
-[6] G. Gallavotti, The Fermi-Pasta-Ulam Problem, Lecture Notes in Physics, Springer, 2008. DOI: 10.1007/978-3-540-72995-2.
+[[1](#references)] G. P. Berman and F. M. Izrailev, The Fermi-Pasta-Ulam problem: Fifty years of progress, Chaos: An Interdisciplinary Journal of Nonlinear Science, vol. 15, no. 1, 2005. DOI: 10.1063/1.1855036.
 
-[7] T. Dauxois, M. Peyrard, and S. Ruffo, The Fermi–Pasta–Ulam “numerical experiment”: history and pedagogical perspectives, European Journal of Physics, vol. 26, no. 5, pp. S3–S11, 2005. DOI: 10.1088/0143-0807/26/5/S01.
+[[2](#references)] Wolfram Research, Inc., Henon–Heiles System, 2002. Available at: http://mathworld.wolfram.com/Henon-HeilesSystem.html
 
-[8] N. J. Zabusky and M. D. Kruskal, Interaction of solitons in a collisionless plasma and the recurrence of initial states, Physical Review Letters, vol. 15, no. 6, pp. 240–243, 1965. DOI: 10.1103/PhysRevLett.15.240.
 
-[9] K. Huang, Statistical Mechanics, 2nd ed., John Wiley & Sons, 1987.
+[[3](#references)] J. L. Tuck and M. T. Menzel, The superperiod of the nonlinear weighted string (FPU) problem, Advances in Mathematics, vol. 9, no. 3, pp. 399–407, 1972. DOI: 10.1016/0001-8708(72)90024-2.
 
-[10] A. Ya. Khinchin, Mathematical Foundations of Statistical Mechanics, Dover Publications, 2013.
+[[4](#references)] F. M. Izrailev and B. V. Chirikov, Statistical properties of a nonlinear string, Doklady Akademii Nauk SSSR, vol. 166, no. 1, pp. 57–59, 1966.
 
-[11] D. Ruelle, Statistical Mechanics: Rigorous Results, World Scientific Publishing, 1999.
+[[5](#references)] J. Ford, The Fermi-Pasta-Ulam problem: Paradox turns discovery, Physics Reports, vol. 213, no. 5, pp. 271–310, 1992. DOI: 10.1016/0370-1573(92)90116-H.
 
-[12] R. S. Palais, The Symmetries of Solitons, arXiv:dg-ga/9708004, 1997.
+[[6](#references)] G. Gallavotti, The Fermi-Pasta-Ulam Problem, Lecture Notes in Physics, Springer, 2008. DOI: 10.1007/978-3-540-72995-2.
+
+[[7](#references)] T. Dauxois, M. Peyrard, and S. Ruffo, The Fermi–Pasta–Ulam “numerical experiment”: history and pedagogical perspectives, European Journal of Physics, vol. 26, no. 5, pp. S3–S11, 2005. DOI: 10.1088/0143-0807/26/5/S01.
+
+[[8](#references)] N. J. Zabusky and M. D. Kruskal, Interaction of solitons in a collisionless plasma and the recurrence of initial states, Physical Review Letters, vol. 15, no. 6, pp. 240–243, 1965. DOI: 10.1103/PhysRevLett.15.240.
+
+[[9](#references)] K. Huang, Statistical Mechanics, 2nd ed., John Wiley & Sons, 1987.
+
+[[10](#references)] A. Ya. Khinchin, Mathematical Foundations of Statistical Mechanics, Dover Publications, 2013.
+
+[[11](#references)] D. Ruelle, Statistical Mechanics: Rigorous Results, World Scientific Publishing, 1999.
+
+[[12](#references)] R. S. Palais, The Symmetries of Solitons, arXiv:dg-ga/9708004, 1997.
 
 [13] E. Fermi, J. Pasta, and S. Ulam, Studies of Nonlinear Problems, Los Alamos National Laboratory, Technical Report LA-1940, 1955.

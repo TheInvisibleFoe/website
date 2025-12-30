@@ -1,17 +1,18 @@
-{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
-<img
-    src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
-    {{ with $image }}
-    width="{{ $image.Width }}" height="{{ $image.Height }}"
-    {{ end }}
-    {{ with .Title}} style="width: 100%; max-width: {{ . }};"{{ end }}
-    />
-{{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+<!-- {{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}} -->
+<!-- <img -->
+<!--     src="{{ .Destination | safeURL }}" alt="{{ .Text }}" -->
+<!--     {{ with $image }} -->
+<!--     width="{{ $image.Width }}" height="{{ $image.Height }}" -->
+<!--     {{ end }} -->
+<!--     {{ with .Title}} style="width: 100%; max-width: {{ . }};"{{ end }} -->
+<!--     /> -->
+<!-- {{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }} -->
+
 {{ if .Title }}
-
-  
-  {{ .Title }}
-
+  <figure>
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+    <figcaption>{{ .Title }}</figcaption>
+  </figure>
 {{ else }}
-
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
 {{ end }}
