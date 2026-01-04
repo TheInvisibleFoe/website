@@ -212,6 +212,13 @@ The courses for this Semester were,
 2. Biophysics.
 3. Biology Laboratory.
 
+
+
+> [!TODO]+ PH2101 Waves and Optics
+> *I do not have complete notes of this course. However [Diptanuj](https://casiowave.github.io) has a comphrehensive set of notes.*
+> 1. [Diptanuj's notes](https://casiowave.github.io/pdf/PH2101.pdf)
+
+
 > [!TODO]+ LS2102 Biology Laboratory
 > *We had to submit reports for two experiments: enzymatic analysis and Gel filtration chromatography.*
 > 1. [Gel Filtration Chromatography.](https://raw.githubusercontent.com/TheInvisibleFoe/IISER_notes/main/LS2102/lab_report_01.pdf)
