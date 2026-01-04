@@ -614,7 +614,7 @@ order terms in the Taylor series expansion. Keeping terms upto order
 The additional fourth order derivative term acts as a dispersive term,
 preventing shock formation. We now differentiate w.r.t. \(x\) and define
 \(w = u_x\), to obtain,
-\[\frac{1}{c^2} w_{tt} = w_{xx} + \alpha h \frac{\partial}[[2](#references)]{(w^2)}{x} + \frac{h^2}{12} w_{xxxx} + O(h^4)\]
+\[\frac{1}{c^2} w_{tt} = w_{xx} + \alpha h \frac{\partial^2}{\partial w \partial x} + \frac{h^2}{12} w_{xxxx} + O(h^4)\]
 
 This is known as the Boussinesq equation. This admits wave like
 solutions that do not form shocks, these are periodic water waves.
