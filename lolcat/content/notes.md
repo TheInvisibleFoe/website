@@ -6,6 +6,17 @@ In an effort to properly organize my notes, I have uploaded all readable and alm
 
 ## Year 4
 ---
+### Spring Semester
+The courses I chose this Semester were,
+1. Advanced Optics Laboratory.
+2. Advanced Statistical Mechanics.
+3. Evolutionary Dynamics.
+4. Atomic, Molecular and Optical Physics.
+5. Group Theory Methods in Physics[NPTEL].
+
+
+> [!TODO]+ PH4202 Advanced Statistical Mechanics(A Work in Progress)
+> [Lecture Notes](https://raw.githubusercontent.com/TheInvisibleFoe/IISER_notes/main/PH4202/note/main.pdf)
 ### Autumn Semester
 
 For this semester, I chose the following courses,
@@ -291,6 +302,17 @@ The courses I  HAD to take this semester, were,
 Aside from the lecture notes, there are some extra notes that might prove beneficial to the chosen few.
 
 
+> [!MEMO]+ Typst Template.
+> *I have been using [Typst](https://typst.app/) for quite some time. For my convenience, I have personalized typst report and Presentation templates. Both of them are quite subject to change. The Presentation template is quite new, and very much unpolished.*
+> 
+> **REPORT**
+>
+> *In order to run the template, one needs to go to where* `main.typ` *is located and type* `typst watch --root .. main.typ`.
+> 1. [Report Template example pdf](https://raw.githubusercontent.com/TheInvisibleFoe/typst-template/main/working_example/note/main.pdf)
+> 2. [Report Template typ files](https://github.com/TheInvisibleFoe/typst-template/blob/main/working_example/)
+> 3. [Report Template blank pdf](https://raw.githubusercontent.com/TheInvisibleFoe/typst-template/main/blank_template/note/main.pdf)
+> 4. [Report Template typ files](https://github.com/TheInvisibleFoe/typst-template/blob/main/blank_template/)
+
 > [!MEMO]+ LaTeX Workshop Handout.
 > Some of my friends and I conducted a small workshop for our Coding and Designing Club, [Slashdot](https://slashdot-iiserk.github.io/) on using LaTeX for academic purposes. We circulated a Handout, which is here.
 > 1. [Handout](https://raw.githubusercontent.com/TheInvisibleFoe/IISER_notes/main/LaTeX%20Workshop%20Handout/main.pdf)
@@ -298,3 +320,5 @@ Aside from the lecture notes, there are some extra notes that might prove benefi
 > [!MEMO]+ Maths Club Student Talk.
 > I delivered a student talk for our maths club,aka [The Identity Club](https://www.iiserkol.ac.in/~maths.club/) on when stochastic systems attain equilibrium. I also wrote a blog post on this topic [here](https://theinvisiblefoe.github.io/posts/eqbm/).
 > 1. [Presentation](https://raw.githubusercontent.com/TheInvisibleFoe/IISER_notes/main/IdentPres/slides/main.pdf)
+
+
